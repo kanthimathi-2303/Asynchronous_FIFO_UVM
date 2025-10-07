@@ -23,6 +23,9 @@ class subscriber extends uvm_component;
 			bins high_rdata = {[128:255]};
 		}
 		read_empty: coverpoint rd_mon_trans.rempty{bins r_empty[]={0,1};}
+		
+		read_x_data: cross read_inc, read_data;
+		read_x_empty: cross read_inc, read_empty;
 	endgroup
 
 	covergroup wr_cg;
